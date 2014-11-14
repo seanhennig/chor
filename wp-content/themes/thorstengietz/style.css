@@ -6,10 +6,35 @@ Author: Sean Hennig
 Author URI: http://sean-hennig.de
 */
 
-body        {color: #333; background: #e5e5e5;}
+body {
+ color: #0b0303;
+ background: #ededed;
+}
  
-#wrapper    {width: 850px; margin: auto; text-align: left; background: #fff;}
-#header        {height: 160px; padding: 20px; }
-#main       {width: 520px; padding: 20px; float: left;}
-#sidebar    {width: 270px; padding: 10px; padding-top: 20px; float: left;}
-#footer        {clear: both; height: 100px; padding: 20px; }
+#wrapper    {
+ width: 850px;
+ margin: auto;
+ text-align: left;
+}
+#header {
+ height: 160px;
+ padding: 20px;
+}
+#main {
+ width: 520px;
+ padding: 20px;
+ float: left;
+ background: rgba(255,255,255,0.8);
+ filter:alpha(opacity=50);
+}
+#sidebar {
+ width: 270px;
+ padding: 10px;
+ padding-top: 20px;
+ float: left;
+}
+#footer {
+ clear: both;
+ height: 100px;
+ padding: 20px;
+}
