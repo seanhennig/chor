@@ -1,0 +1,132 @@
+body {
+	background: @slategray-lighten;
+}
+#wrapper {
+	max-width: @width;
+	margin: 0 auto;
+	margin-top: 20px;
+	overflow: hidden;
+
+	.posts,
+	.sidebar {
+		float: left;
+	}
+	.posts {
+		max-width: calc(~"100% - 300px");
+		width: 100%;
+	}
+	.sidebar {
+		width: 300px;
+	}
+	.post-nav {
+		background: @slategray-blend;
+		padding: 20px 20px 0 20px;
+		margin-bottom: 20px;
+		border-bottom: 5px solid #d4d9de;
+		text-align: center;
+		color: @slategray-border;
+		font-size: 14px;
+
+		.alignright {
+			.dashicons {
+				&:before {
+					float: right;
+					padding-left: 5px;
+				}
+			}
+		}
+
+		.alignleft {
+			.dashicons {
+				&:before {
+					padding-right: 5px;
+				}
+			}
+		}
+
+		span {
+			vertical-align: text-top;
+		}
+
+		.dashicons {
+			width: auto;
+			height: auto;
+		}
+
+		&:after {
+			content: '';
+			clear: both;
+			display: table;
+		}
+
+		a {
+			display: inline-block;
+			background: #328ebe;
+			padding: 10px 20px;
+			border-radius: 4px;
+			color: #fff;
+			text-decoration: none;
+			border-bottom: 3px solid rgba(0,0,0,.2);
+
+			&:hover {
+				background: darken(#328ebe, 10%);
+			}
+		}
+	}
+
+	.gallery {
+		img {
+			border: none;
+		}
+	}
+
+	.gallery-item {
+		img {
+			border-radius: 4px;
+		}
+	}
+	.gallery-caption {
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+.archive-title-wrapper {
+	background: lighten(@slategray, 30%);
+	margin-bottom: 20px;
+
+	.content {
+		margin: 20px 0;
+		margin-bottom: 0;
+		padding: 40px;
+		background: rgba(255,255,255,.2);
+		border-bottom: 5px solid rgba(0,0,0,.1);
+	}
+}
+.archive-title {
+	padding: 40px 0;
+	margin: 0 auto;
+	max-width: @width;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	.dashicons {
+		font-size: 50px;
+		width: 50px;
+		margin-right: 20px;
+
+		&:before {
+			color: @slategray;
+			text-shadow: 1px 1px rgba(255,255,255,.5);
+		}
+	}
+	h1 {
+		font-size: 50px;
+		font-family: 'Archivo Narrow';
+		display: inline-block;
+		font-weight: 300;
+		line-height: 1;
+		color: @slategray;
+		text-shadow: 1px 1px rgba(255,255,255,.5);
+	}
+}

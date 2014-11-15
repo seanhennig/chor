@@ -1,0 +1,134 @@
+.dashicons-menu {
+	display: none;
+}
+
+@media all and (max-width : 720px) {
+	.dashicons-menu {
+		display: block;
+		color: @slategray;
+		font-size: 32px;
+		margin-left: 40px;
+		background: @slategray-black;
+		width: 32px;
+		height: 32px;
+		padding: 10px;
+		border-radius: 4px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.posts .title {
+		font-size: 32px;
+	}
+	#wrapper .post-nav {
+		margin-bottom: 0;
+		border-bottom: 1px solid @slategray-border;
+		background: @slategray-border !important;
+
+	}
+	.content-wrapper {
+		padding: 20px;
+	}
+
+	.content img {
+		float: none;
+	}
+	.content .alignright,
+	.content .alignleft,
+	.featured-image.narrow,
+	.featured-image.wide {
+		float: none;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	#gallery-1 .gallery-item {
+		float: none !important;
+		width: 100% !important;
+	}
+
+	.site-header .navigation {
+		display: none;
+	}
+
+	.site-header .navigation .sub-menu li {
+		padding-left: 30px;
+	}
+	.site-header .navigation ul > li:hover {
+		>.sub-menu,
+		a,
+		a:hover {
+			background: none;
+		}
+	}
+
+	.site-header .navigation ul > li {
+		&.current-menu-item,
+		&.current-menu-ancestor {
+			>a,
+			>a:hover {
+				background: darken(@slategray-black, 5%) !important;
+				border-radius: 4px !important;
+				border: 1px solid @slategray-black;
+			}
+		}
+	}
+
+	#wrapper .posts {
+		max-width: 100%;
+	}
+	.site-header .navbar {
+		width: 100%;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.site-header .navigation ul > li {
+		float: none;
+	}
+	.site-header .navigation .sub-menu,
+	.site-header .navigation .sub-menu .sub-menu {
+		display: block;
+		position: relative;
+		left: 0;
+	}
+	.site-header .navbar .logo,
+	.site-header .navbar .searchform,
+	.site-header .navigation > *,
+	#wrapper {
+		float: none;
+		width: 100%;
+	}
+
+	.site-header .navbar .logo {
+		margin-bottom: 20px;
+	}
+
+	.site-header .navbar .searchform form {
+		width: 100%;
+		float: none;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	#wrapper .posts,
+	#wrapper .sidebar {
+		float: none;
+		width: 100%;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding: 0;
+	}
+	.sidebar .widget {
+		margin-bottom: 0;
+		border-bottom: 1px solid @slategray-border;
+	}
+
+	.post,
+	.posts .page,
+	.error404 .content-wrapper {
+		margin-bottom: 0;
+		border-bottom: 1px solid @slategray-border;
+	}
+}

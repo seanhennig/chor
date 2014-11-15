@@ -1,0 +1,34 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	min-height: 100%;
+	margin: 0 0 100px; /* bottom = footer height */
+}
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	background: @slategray-darken;
+	border-top: 5px solid rgba(0,0,0,.5);
+	font-size: 12px;
+	text-align: center;
+	color: @slategray;
+	padding: 25px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	.copy {
+		color: @slategray-lighten;
+		font-size: 16px;
+		margin-bottom: 5px;
+	}
+	.theme-info {
+		a {
+			color: @slategray;
+		}
+	}
+}
