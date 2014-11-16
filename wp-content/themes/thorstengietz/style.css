@@ -54,6 +54,16 @@ a.small-link:hover {
     text-decoration:underline;
 }
 
+input,textarea {
+    color: #666666;
+    background-color: #f0ebeb;
+    border: dotted 1px #c0c0c0;
+    -moz-border-radius: 0 5px 0px 0px;
+    -webkit-border-radius: 0 5px 0px 0px;
+    border-radius: 0 5px 0px 0px;
+    font-size: 11pt;
+}
+
 /*  ------ layout ------------------------ */
 
 #wrapper {
@@ -81,6 +91,7 @@ a.small-link:hover {
 }
 #middle-contents {
     background:url(img/bg_left_right.png) repeat-y 0;
+    min-height: 600px;
 }
 #left-col {
     float:left;
@@ -103,63 +114,132 @@ a.small-link:hover {
 #sidebar {
     width: 270px;
     padding: 10px;
-    padding-top: 20px;
+    padding-top: 0px;
     float: left;
 }
 
 /* ------- header ------- */
 #header-left {
     float: left;
+    position: absolute;
+    display:inline;
+    width: 590px;
+    margin-left: 10px;
+    z-index: 99;
+}
+#header-right {
+    float: right;
     display: inline;
     width: 330px;
     margin: 35px 10px 0 10px;
 }
-#header-right {
-    float: right;
-    position: absolute;
-    display:inline;
-    width: 600px;
-    z-index: 99;
-    border: 1px solid #ffff00;
+
+
+
+/*--------- Navigation ------- */
+
+.main-navigation {
+    clear: both;
+    margin: 0 auto;
+    max-width: 660px;
+    min-height: 45px;
+    position: relative;
 }
 
-/*  ------ header-menu ------------------------ */
+ul.nav-menu,
+div.nav-menu > ul {
+    margin: 0;
+    padding: 0 40px 0 0;
+}
 
-.header-menu-wrapper { }
-#pngfix-right { background:url(img/menu_right.png) no-repeat right top; display:block; width:10px; height:60px; float:right; }
-#pngfix-left { background:url(img/menu_left.png) no-repeat left top; display:block; width:10px; height:60px; float:right; }
+.nav-menu li {
+    display: inline-block;
+    position: relative;
+}
 
-.menu { float:right; background:url(img/menu_middle.png) repeat-x left top; font-size:11px; height:61px; margin:0; }
-.menu, .menu ul { line-height:1; margin:0; padding:0; }
-.menu li { position:relative; float:left; border-left:1px solid #222; height:55px; padding:0 18px; z-index:100; }
-.menu li.first_menu { border:none; }
-.menu ul li { height:auto; border-left:none; padding:0; left:auto;  }
-.menu #header-menu-home { border:none; }
-.menu a, .menu a:visited { color:#888; display:block; padding:0 15px; line-height:49px; position:relative; top:5px; }
-.menu a:hover { color:#83bac4; border-bottom:2px solid #83bac4; text-decoration:none; }
+.nav-menu li a {
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    line-height: 1;
+    padding: 15px 20px;
+    text-decoration: none;
+}
 
-.menu ul { position:absolute; top:52px; left:0; display:none; opacity:0; width:200px; }
-.menu ul a, .menu ul a:visited { background:#000; line-height:140%; padding:9px 30px 8px; border:1px solid #222; width: 128px; margin:-1px 0 0 0; }
-.menu ul a:hover { background:#222; border-bottom:1px solid #222; }
-.menu ul ul { margin: -34px 0 0 189px; top:34px; }
+.nav-menu li:hover > a,
+.nav-menu li a:hover,
+.nav-menu li:focus > a,
+.nav-menu li a:focus {
+    background-color: #3d3332;
+    color: #fff;
+    border-bottom: 2px solid #f7f5e7;
+    -moz-border-radius: 0 5px 0px 0px;
+    -webkit-border-radius: 0 5px 0px 0px;
+    border-radius: 0 5px 0px 0px;
+}
 
-.menu .current_page_item a, .menu .current_page_item a:visited,
- .menu .current-cat a, .menu .current-cat a:visited,
-  .menu .current-menu-item a, .menu .current-menu-item a:visited
-{ color:#869497; border-bottom:2px solid #627376; }
+.nav-menu .sub-menu,
+.nav-menu .children {
+	background-color: #3d3332;
+        border-bottom: 2px solid #f7f5e7;
+        -moz-border-radius: 0 5px 0px 0px;
+        -webkit-border-radius: 0 5px 0px 0px;
+        border-radius: 0 5px 0px 0px;
+	/* border: 2px solid #f7f5e7;
+	border-top: 0; */
+	padding: 0;
+	position: absolute;
+	left: -2px;
+	z-index: 99999;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
 
-.menu .current_page_item a:hover,
- .menu .current-cat a:hover,
-  .menu .current-menu-item a:hover
-{ color:#83bac4; border-bottom:2px solid #83bac4; text-decoration:none; }
+.nav-menu .sub-menu ul,
+.nav-menu .children ul {
+	border-left: 0;
+	left: 100%;
+	top: 0;
+}
 
-.menu .current_page_item ul a, .menu .current_page_item ul a:visited, .menu .current_page_item ul a:hover,
- .menu .current-cat ul a, .menu .current-cat ul a:visited, .menu .current-cat ul a:hover,
-  .menu .current-menu-item ul a, .menu .current-menu-item ul a:visited, .menu .current-menu-item ul a:hover
-{ border-bottom:1px solid #373737; }
+ul.nav-menu ul a,
+.nav-menu ul ul a {
+	color: #fff;
+	margin: 0;
+	width: 200px;
+}
 
-.menu ul .parent_menu > a:link, .menu ul .parent_menu > a:visited { background:#000 url(img/arrow1.gif) no-repeat 170px 15px; }
-.menu ul .parent_menu > a:hover { background:#222 url(img/arrow1.gif) no-repeat 170px 15px; }
+ul.nav-menu ul a:hover,
+.nav-menu ul ul a:hover,
+ul.nav-menu ul a:focus,
+.nav-menu ul ul a:focus {
+	background-color: #904037;
+}
 
+ul.nav-menu li:hover > ul,
+.nav-menu ul li:hover > ul,
+ul.nav-menu .focus > ul,
+.nav-menu .focus > ul {
+	clip: inherit;
+	overflow: inherit;
+	height: inherit;
+	width: inherit;
+}
 
+.nav-menu .current_page_item > a,
+.nav-menu .current_page_ancestor > a,
+.nav-menu .current-menu-item > a,
+.nav-menu .current-menu-ancestor > a {
+	color: #d3a9a5;
+	font-style: italic;
+}
 
+/* ------- contact form -------- */
+.wpcf7-textarea {
+    width: 630px;
+    height: 300px;
+}
+
+/* ------ search bar, toggle search, based on https://github.com/codrops/ExpandingSearchBar ------ */
