@@ -1,32 +1,42 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta name="viewport" content="width=device-width">
         <title><?php wp_title(); ?> - <?php bloginfo('name'); ?></title>
         
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-     
         <?php wp_head(); ?>
     </head>
-    <body>
-     
+    <body <?php body_class(); ?>>
         <div id="wrapper">
+            <div id="contents">
+        
          
-           <div id="header"></div><!-- header -->
-         
-           <div id="main">
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                    <div class="entry">
-                       <?php the_content(); ?>
-                    </div>
-                <?php endwhile; endif; ?>
-           </div><!-- main -->
-         
-           <div id="sidebar"></div><!-- sidebar --> 
-         
-           <div id="footer"></div><!-- footer -->
+                <?php get_header(); ?>
+             
+               <div id="middle-contents">
+                    <div id="left-col">
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                            <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                            <div class="entry">
+                               <?php the_content(); ?>
+                            </div>
+                        <?php endwhile; endif; ?>
+                    </div><!-- left-col -->
+                    <div id="right-col">
+                        right col
+                        <div id="sidebar">
+                            <?php get_sidebar( 'content' ); ?>
+                        </div><!-- sidebar -->
+                    </div><!-- right-col -->
+                    <div style="clear: both;"></div>
+               </div><!-- middle-contents -->
+               
+               <?php get_footer(); ?>
+               
+            </div> <!--contents-->
          
         </div><!-- wrapper -->
      
