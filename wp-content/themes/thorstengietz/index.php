@@ -20,6 +20,7 @@
         <?php wp_head(); ?>
         
         <link rel="stylesheet" type="text/css" href="/wp-content/themes/thorstengietz/css/component.css" />
+
     </head>
     <body <?php body_class(); ?>>
         <div id="wrapper">
@@ -50,13 +51,6 @@
             </div> <!--contents-->
          
         </div><!-- wrapper -->
-     
-    <!-- includes the search, based on https://github.com/codrops/ExpandingSearchBar -->
-    <script src="/wp-content/themes/thorstengietz/js/classie.js"></script>
-    <script src="/wp-content/themes/thorstengietz/js/uisearch.js"></script>
-    <script>
-            new UISearch( document.getElementById( 'sb-search' ) );
-    </script>
     <?php wp_footer(); ?>
     </body>
 </html>
